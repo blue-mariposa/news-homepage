@@ -1,0 +1,326 @@
+/* Adding offline fonts */
+/* @font-face {
+    font-family: 'Inter';
+    src: url(../fonts/Inter-ExtraBold.ttf);
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url(../fonts/Inter-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url(../fonts/Inter-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+} */
+
+/* Reset default settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Navigation */
+header {
+    position: relative;
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.logo img {
+    width: 3rem;
+}
+
+/* hide open and close buttons in desktop mode */
+#nav-open-btn,
+#nav-close-btn {
+    display: none;
+}
+
+.navigation .menu {
+    display: flex;
+}
+
+.menu .menu-item{
+    list-style-type: none;
+    margin: 0 .9rem;
+}
+
+.menu .menu-item a {
+    text-decoration: none;
+    color:hsl(236, 13%, 42%);
+}
+
+.menu .menu-item a:hover {
+    color:hsl(5, 85%, 63%);
+}
+
+/* main content */
+main {
+    max-width: 1440px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    padding: 1rem;
+    gap: 2rem;
+}
+
+.display-image {
+    grid-column: 1 / 3;
+}
+
+.display-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.tittle {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.tittle h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: hsl(240, 100%, 5%);
+}
+
+.tittle-content {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.tittle-content p {
+    line-height: 1.5rem;
+    font-size: 0.95rem;
+    color:hsl(236, 13%, 42%);
+}
+
+.tittle-content button {
+    text-transform: uppercase;
+    font-weight: 400;
+    border: none;
+    color: hsl(36, 100%, 99%);
+    background-color: hsl(5, 85%, 63%);
+    margin-top: 1.8rem;
+    padding: .5rem 2.5rem;
+    cursor: pointer;
+}
+
+.tittle-content button:hover {
+    background-color: hsl(240, 100%, 5%);
+}
+
+.aside {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+    padding: 2rem;
+    background-color: hsl(240, 100%, 5%);
+}
+
+.aside h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: hsl(35, 77%, 62%);
+}
+
+.aside .aside-text {
+    margin-top: 1rem;
+    padding: 1rem 0;
+    color:hsl(236, 13%, 42%);
+    border-bottom: 1px solid;
+}
+
+.aside .aside-text:last-of-type {
+    border-bottom: none;
+}
+
+.aside .aside-text h3 {
+    /* font-size: 1.1rem; */
+    font-weight: 700;
+    color: hsl(36, 100%, 99%);
+}
+
+.aside .aside-text h3:hover {
+    color: hsl(35, 77%, 62%);
+    cursor: pointer;
+}
+
+.aside-text p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-top: 1rem;
+    color:hsl(236, 13%, 42%);
+    
+}
+
+/* Related news */
+.related-news {
+    display: flex;
+    /* max-height: 7rem; */
+    gap: 1rem;
+}
+
+.related-news:nth-of-type(0) {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+.related-news:nth-of-type(1) {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+}
+
+.related-news:nth-of-type(2) {
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
+
+.related-news .news-thumb {
+    width: 120px;
+    height: 100%;
+}
+
+.related-news .news-thumb img {
+    width: 120px;
+    height: 100%;
+}
+
+.related-news .news-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.news-preview h2,
+.news-preview p {
+    line-height: 1.5rem;
+    color:hsl(236, 13%, 42%);
+}
+
+.news-preview p {
+    font-size: 0.95rem;
+}
+
+.news-preview h3 {
+    color: hsl(240, 100%, 5%);
+}
+
+.news-preview h3:hover {
+    cursor: pointer;
+    color: hsl(5, 85%, 63%);
+}
+
+/* Attribution */
+.attribution {
+    height: 2rem;
+    grid-column: 1 / 4;
+    grid-row: 5 / 6;
+    line-height: 2rem;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: .5rem;
+    color: hsl(236, 13%, 42%);
+    background-color: hsl(240, 100%, 5%);
+}
+
+.attribution a { 
+    color: hsl(5, 85%, 63%);
+}
+
+
+/* Media queries */
+@media only screen and (max-width: 768px) {
+
+    /* Navigation */
+    #nav-open-btn{
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
+        display: flex;
+        width: 2rem;
+        height: 1.5rem;
+        cursor: pointer;
+    }
+
+    .navigation {
+        position: fixed;
+        top: 0;
+        right: -100vw;
+        width: 100vw;
+        height: 100vh;
+        background-color: hsla(0, 0%, 0%, 0.5);
+        z-index: 50;
+        transition: all .40s ease;
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        right: 0%;
+        min-width: 60vw;
+        height: 100%;
+        background-color: hsl(0, 0%, 100%);
+        flex-direction: column;
+        padding-top: 10rem;
+        padding-left: 1rem;
+        gap: 1.5rem;
+    }
+
+    .menu .menu-item a {
+        font-size: 1.1rem;
+        color: hsl(240, 100%, 5%);
+    }
+
+    #nav-close-btn {
+        display: flex;
+        position: absolute;
+        top: 1.5rem;
+        right: 3rem;
+        cursor: pointer;
+    }
+
+    .navigation.show {
+        right: 0;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .display-image,
+    .tittle,
+    .tittle-content,
+    .aside
+     {
+        grid-column: 1 / 2;
+    }
+
+    .display-image {
+        grid-row: 1 / 2;
+    }
+
+    .tittle, .tittle-content, .aside  {
+        grid-row: inherit;
+    }
+
+    /* .tittle-content {
+        grid-row: inherit;
+    }
+
+    .aside {
+        grid-row: inherit;
+    } */
+}
